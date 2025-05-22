@@ -56,13 +56,16 @@ export const config = {
   capabilities: [
     {
       "appium:platformName": "Android",
-      "appium:platformVersion": "15.0",
+      "appium:platformVersion": "13.0",
       "appium:deviceName": "emulator-5554",
       "appium:automationName": "UIAutomator2",
       "appium:app": path.join(process.cwd(), "/app/android/ApiDemos-debug.apk"),
       browserName: "",
     },
   ],
+  autoCompileOpts: {
+    autoCompile: true,
+  },
 
   //
   // ===================
