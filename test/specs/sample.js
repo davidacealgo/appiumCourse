@@ -7,4 +7,9 @@ describe("Android Elements Test Suite", () => {
     const actionBar = $("~Action Bar");
     await expect(actionBar).toBeExisting();
   });
+
+  it("Find element by class name", async () => {
+    const className = $("android.widget.TextView");
+    await expect(className).toHaveText("API Demos");
+  });
 });
