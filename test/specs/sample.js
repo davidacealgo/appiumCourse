@@ -40,4 +40,26 @@ describe("Android Elements Test Suite", () => {
     await textAssertion.waitForExist({ timeout: 5000 });
     await expect(textAssertion).toHaveText("You selected: 1 , Command two");
   });
+
+  it("Find Element by UIAutomator", async () => {
+    const alertDialogsOption = $(
+      'android=new UiSelector().textContains("Preference")'
+    );
+    await alertDialogsOption.click();
+  });
+});
+
+describe("Android Elements Find Multiple Elements", () => {
+  afterEach(async () => {
+    await driver.terminateApp("io.appium.android.apis");
+    await driver.activateApp("io.appium.android.apis");
+  });
+
+  it.only("Find Multiple Elements", async () => {
+    const expectedList = [];
+    const textList = $$("android.widget.TextView");
+    console.log("cantidad: " + (await textList.length));
+
+    await expect(actualList).toEqual(expectedList);
+  });
 });
